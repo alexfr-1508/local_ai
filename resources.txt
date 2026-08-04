@@ -1,0 +1,18 @@
+Infrastucture:
+https://docs.openwebui.com/
+https://docs.litellm.ai/docs/
+https://headroom-docs.vercel.app/docs
+
+Model Engines:
+https://docs.ollama.com/api/introduction
+https://docs.vllm.ai/en/latest/usage/
+https://developers.redhat.com/articles/2025/08/08/ollama-vs-vllm-deep-dive-performance-benchmarking#comparison_1__default_settings_showdown
+
+Search:
+https://docs.searxng.org/
+
+Models:
+https://ollama.com/search
+https://huggingface.co/
+https://huggingface.co/collections/Qwen/qwen35
+https://huggingface.co/Soofi-Project
