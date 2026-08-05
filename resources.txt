@@ -6,7 +6,9 @@ https://headroom-docs.vercel.app/docs
 Model Engines:
 https://docs.ollama.com/api/introduction
 https://docs.vllm.ai/en/latest/usage/
+https://docs.sglang.io/
 https://developers.redhat.com/articles/2025/08/08/ollama-vs-vllm-deep-dive-performance-benchmarking#comparison_1__default_settings_showdown
+https://pexon-consulting.de/blog/sglang-vs-vllm/
 https://www.youtube.com/watch?v=MsdZZ-HEUFo
 
 Search:
