@@ -1,0 +1,30 @@
+services:
+  sglang:
+    image: ${SGLANG_IMAGE}
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+
+    ipc: host
+
+    ports:
+    - "${HOST_BIND}:${HOST_PORT}:${CONTAINER_PORT}"
+
+    volumes:
+      - hf_cache:/root/.cache/huggingface
+
+    environment:
+      - HF_TOKEN=${HF_TOKEN}
+
+    command:
+      - sglang
+      - serve
+      - --model-path
+      - ${MODEL}
+      - --host
+      - 0.0.0.0
+      - --tp
+      - "${TP_SIZE}"
+
+volumes:
+  hf_cache:
+    external: true
