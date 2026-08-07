@@ -1,0 +1,25 @@
+services:
+  litellm:
+    image: ${IMAGE}
+    container_name: ${CONTAINER_NAME}
+
+    restart: unless-stopped
+
+    ports:
+      - "${HOST_BIND}:${HOST_PORT}:${CONTAINER_PORT}"
+
+    volumes:
+      - ./config.yaml:/app/config.yaml
+
+    environment:
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY}
+      LITELLM_SALT_KEY: ${LITELLM_SALT_KEY}
+      DATABASE_URL: ${DATABASE_URL}
+
+    command:
+      - "--config"
+      - "/app/config.yaml"
+
+    depends_on:
+      postgres:
+        condition: service_healthy

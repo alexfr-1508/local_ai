@@ -1,0 +1,9 @@
+services:
+  vllm:
+    devices:
+      - /dev/dri:/dev/dri
+
+    volumes:
+      - /dev/dri/by-path:/dev/dri/by-path
+
+    privileged: true

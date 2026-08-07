@@ -1,0 +1,14 @@
+services:
+  vllm:
+    devices:
+      - /dev/kfd
+      - /dev/dri
+
+    security_opt:
+      - seccomp=unconfined
+
+    group_add:
+      - video
+
+    cap_add:
+      - SYS_PTRACE

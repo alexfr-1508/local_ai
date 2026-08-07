@@ -1,0 +1,13 @@
+services:
+  sglang:
+    privileged: true
+
+    group_add:
+      - video
+
+    devices:
+      - /dev/dri
+
+    volumes:
+      - /dev/dri/by-path:/dev/dri/by-path
+      - /dev/shm:/dev/shm

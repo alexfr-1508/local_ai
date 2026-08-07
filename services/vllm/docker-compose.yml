@@ -1,31 +1,29 @@
 services:
-  sglang:
+  vllm:
     image: ${IMAGE}
     container_name: ${CONTAINER_NAME}
-    restart: unless-stopped
 
+    restart: unless-stopped
     ipc: host
 
     ports:
-    - "${HOST_BIND}:${HOST_PORT}:${CONTAINER_PORT}"
+      - "${HOST_BIND}:${HOST_PORT}:${CONTAINER_PORT}"
 
     volumes:
       - hf_cache:/root/.cache/huggingface
 
     environment:
-      HF_TOKEN=${HF_TOKEN}
+      HF_TOKEN: ${HF_TOKEN}
 
     command:
-      - sglang
-      - serve
-      - --model-path
+      - --model
       - ${MODEL}
       - --host
       - 0.0.0.0
       - --port
-      - "${CONTAINER_PORT}"
-      - --tp
-      - "${TP_SIZE}"
+      - ${CONTAINER_PORT}
+      - --tensor-parallel-size
+      - ${TP_SIZE}
 
 volumes:
   hf_cache:

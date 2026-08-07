@@ -1,0 +1,31 @@
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+  database_url: os.environ/DATABASE_URL
+
+  prisma_migrate: true
+
+  store_model_in_db: true
+
+  store_prompts_in_spend_logs: true
+
+  alerting:
+    - email
+
+
+email_settings:
+  sender_name: LiteLLM
+  sender_email: ${SMTP_SENDER_EMAIL}
+  smtp_host: ${SMTP_HOST}
+  smtp_port: ${SMTP_PORT}
+
+
+environment_variables:
+  SMTP_SENDER_EMAIL: ${SMTP_SENDER_EMAIL}
+  SMTP_SENDER_NAME: LiteLLM
+  SMTP_HOST: ${SMTP_HOST}
+  SMTP_PORT: ${SMTP_PORT}
+
+  PROXY_BASE_URL: ${PROXY_BASE_URL}
+
+  SEARXNG_API_BASE: http://searxng:8888

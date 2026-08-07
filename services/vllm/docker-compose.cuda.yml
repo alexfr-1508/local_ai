@@ -1,0 +1,3 @@
+services:
+  vllm:
+    gpus: all

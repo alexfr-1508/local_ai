@@ -129,16 +129,26 @@ install_docker_container() {
 
     cd "$service_dir" || return 1
 
+    check_compose_file || return 1
+
     if [ -n "$profile" ]; then
-        if [ ! -f "$profile" ]; then
-            echo "Profile not found: $profile"
+        local env_file="${profile}.env"
+        local compose_args=(-f docker-compose.yml)
+
+        if [ ! -f "$env_file" ]; then
+            echo "Missing environment file: $env_file"
             return 1
         fi
 
-        check_compose_file
-        docker compose --env-file "$profile" up -d
+        if [ -f "docker-compose.${profile}.yml" ]; then
+            compose_args+=(-f "docker-compose.${profile}.yml")
+        fi
+
+        docker compose \
+            "${compose_args[@]}" \
+            --env-file "$env_file" \
+            up -d
     else
-        check_compose_file
         docker compose up -d
     fi
 }

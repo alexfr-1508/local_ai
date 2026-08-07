@@ -1,0 +1,15 @@
+services:
+  open-webui:
+    image: ${IMAGE}
+    container_name: ${CONTAINER_NAME}
+
+    restart: unless-stopped
+
+    ports:
+      - "${HOST_BIND}:${HOST_PORT}:${CONTAINER_PORT}"
+
+    volumes:
+      - open-webui:/app/backend/data
+
+volumes:
+  open-webui:

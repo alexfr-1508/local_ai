@@ -1,0 +1,16 @@
+services:
+  searxng:
+    image: ${IMAGE}
+    container_name: ${CONTAINER_NAME}
+
+    restart: unless-stopped
+
+    ports:
+      - "${HOST_BIND}:${HOST_PORT}:${CONTAINER_PORT}"
+
+    volumes:
+      - ./settings.yml:/etc/searxng/settings.yml:ro
+      - searxng-data:/var/cache/searxng
+
+volumes:
+  searxng-data:
