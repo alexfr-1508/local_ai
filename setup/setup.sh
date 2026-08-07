@@ -105,7 +105,7 @@ install_service() {
             install_docker_container "$service" "$ARCHITECTURE"
             ;;
 
-        litellm|open-webui)
+        litellm|open-webui|searxng)
             install_docker_container "$service"
             ;;
 
