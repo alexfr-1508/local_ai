@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "email-server": {
+      "command": "/path/to/venv/python", 
+      "args": [
+        "/path/to/python/file"
+      ],
+      "env": {
+	    "PYTHONPATH": "/pythonpath",
+        "SMTP_HOST": "smtp_host",
+        "SMTP_PORT": "smtp_port",
+        "SMTP_USER": "smtp_user",
+        "SMTP_PASSWORD": "smtp_password",
+        "ZAMMAD_URL": "zammad_url",
+        "ZAMMAD_TOKEN": "zammad_user_token"
+      }
+    }
+  }
+}

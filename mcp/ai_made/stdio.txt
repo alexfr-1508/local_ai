@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "terminal-server": {
+      "command": "/path/to/venv/python",
+      "args": [
+        "/path/to/python/file/server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/pythonpath"
+      }
+    }
+  }
+}

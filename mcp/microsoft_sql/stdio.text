@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "microsoft-sql-server": {
+      "command": "/path/to/venv/python",
+      "args": [
+        "/path/to/python/file/microsoft_sql_server.py"
+      ],
+      "env": {
+        "PYTHONPATH": "/pythonpath",
+        "SQL_CONNECTION_STRING": "sql_connection_string" // used "Server=localhost,1433;Database=McpTest;Encrypt=yes;TrustServerCertificate=yes;UID=sa;PWD=YourStrongPassword123!" for testing
+      }
+    }
+  }
+}
